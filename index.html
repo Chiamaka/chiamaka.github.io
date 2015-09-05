@@ -8,29 +8,33 @@
 	<div class="container">
 		<!-- sociall links -->
 		<div class="row social" align="center">
-			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 				<a href="https://ng.linkedin.com/in/chiamakanwolisa" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" class="img-responsive img-circle"></a>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 				<a href="https://www.facebook.com/chiamaka.nwolisa.3" target="_blank"><img src="img/facebook.png" width="50px" height="50px"></a>
 			</div>
 
-			<div class="col-lg-4">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
 				<a href="https://twitter.com/Mz_Chi" target="_blank"><img src="img/twitter.png" width="50px" height="50px"></a>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+				<a href="https://github.com/chiamaka" target="_blank"><img src="img/github.png" width="50px" height="50px" style="background-color:white; border-radius:55px"></a>
 			</div>
 		</div>
 
 		<div class="row middle">
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-				<img src="img/chi.jpeg" class="img-responsive img-circle">
+				<img src="img/chiamaka.jpg" class="img-responsive img-circle">
 			</div>
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="quote">
-					<h1 class="page-header text-center">Hi there, Im <span class="name">Chiamaka<span></h1>
+					<h1 class="page-header text-center">Hi there, Im <span class="name desc"><span></h1>
 					<ul class="text-center">
-						<li><a href="#home">Home</a></li> |
+						<li><a href="#">Home</a></li> |
 						<li><a href="#portfolio">Portfolio</a></li> |
 						<li><a href="#fun-facts">Fun facts</a></li> |
 						<li><a href="#interests">Interest & Hobbies</a></li> 
@@ -65,14 +69,19 @@
 		<div class="row fun-facts">
 			<h2 class="fun-facts-header text-center" id="fun-facts">Fun facts</h2>
 
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				<img src="img/rubiks.png" class="img-responsive centered">
 				<b><p class="text-center">I can solve the Rubik's cube in less than 3 minutes</p></b>
 			</div>
 
-			<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 				<img src="img/classical.jpg" class="centered" height="200px" width="300px">
 				<b><p class="text-center">I have a thing for classical music</p></b>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+				<img src="img/band.jpg" class="centered" height="200px" width="300px">
+				<b><p class="text-center">I was once in a matching band</p></b>
 			</div>
 		</div>
 
@@ -108,11 +117,23 @@
 		</div>
 
 		<div class="footer">
-			<p class="text-center">So this is me. You can hop off now. Byeeee</p>
+			<p class="text-center end">This is ME.. Byeee</p>
 		</div>
 	</div>	
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="js/typed.js"></script>
+		<script>
+			$(function() {
+				$(".desc").typed({strings: ["Chiamaka", "a Programmer", "a Self-Empowerment Activist", "an Avid Reader","a Movie Lover","a Tinker","Weird","Crazy about Boots", "Funny","AMAZING"], typeSpeed: 60, showCursor: false, loop: true,startDelay: 900, backDelay: 500
+				});
+			});
 
+			/**$(function() {
+				$(".end").typed({strings: ["So this is me.", "You can hop off now.", "Byeeee"], typeSpeed: 100, showCursor: false, loop: true
+				});
+			});**/
+
+		</script>
 	</body>
 </html>
