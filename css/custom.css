@@ -23,6 +23,7 @@ p{
 }
 
 .portfolio-header{
+	padding-top: 30px;
 	color: #d35400;
 	font-size: 30px;
 	text-transform: uppercase;
@@ -35,6 +36,7 @@ p{
 }
 
 .fun-facts-header{
+	padding-top: 30px;
 	color: #d35400;
 	font-size: 30px;
 	text-transform: uppercase;
