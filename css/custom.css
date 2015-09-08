@@ -2,6 +2,9 @@ body{
 	font-family: 'Gilda Display', serif;
 	background-color: #eee;
 }
+p{
+
+}
 .social{
 	background-color: #34495e;
 }
@@ -11,7 +14,8 @@ body{
 }
 .centered{
 	margin:auto;
-	display: block
+	display: block;
+	padding-bottom: 10px;
 }
 .portfolio{
 	margin-top: 30px;
@@ -26,7 +30,7 @@ body{
 }
 
 .fun-facts{
-	margin-top: 30px;
+	margin-top: 100px;
 	padding-top: 30px;
 }
 
@@ -38,7 +42,7 @@ body{
 }
 
 .interests{
-	margin-top: 30px;
+	margin-top: 100px;
 	padding-top: 30px;
 	color: #d35400;
 	font-size: 30px;
