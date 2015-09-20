@@ -1,12 +1,16 @@
+html{
+	font-size: 14px;
+}
 body{
 	font-family: 'Gilda Display', serif;
 	background-color: #eee;
 }
 p{
-
+	font-size: 16px;
 }
 .social{
-	background-color: #34495e;
+	//background-color: #34495e;
+	margin-top: 15px;
 }
 
 .middle{
@@ -114,4 +118,14 @@ blockquote:after {
 blockquote p {
   display: inline;
 }
-
+/*=========media queries=============*/
+@media (max-width: 414px) {
+  .stylingheader{
+    margin-bottom: 100px;
+  }
+}
+@media (min-width: 414px) and (max-width: 800px) {
+  .stylingheader{
+    margin-bottom: 50px;
+  }
+}

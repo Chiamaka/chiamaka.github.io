@@ -16,19 +16,19 @@
 	<div class="container">
 		<!-- sociall links -->
 		<div class="row social" align="center">
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 				<a href="http://ng.linkedin.com/in/chiamakanwolisa" target="_blank"><img src="img/linkedin.png" width="50px" height="50px" class="img-responsive img-circle"></a>
 			</div>
 
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 				<a href="https://www.facebook.com/chiamaka.nwolisa.3" target="_blank"><img src="img/facebook.png" width="50px" height="50px"></a>
 			</div>
 
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 				<a href="https://twitter.com/Mz_Chi" target="_blank"><img src="img/twitter.png" width="50px" height="50px"></a>
 			</div>
 
-			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
 				<a href="https://github.com/chiamaka" target="_blank"><img src="img/github.png" width="50px" height="50px" style="background-color:white; border-radius:55px"></a>
 			</div>
 		</div>
@@ -40,7 +40,14 @@
 
 			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 				<div class="quote">
-					<h1 class="page-header text-center">Hi there, Im <span class="name desc"><span></h1>
+					<div class="stylingheader" style="height:40px; width:auto">
+						<h1 class="page-header text-center">Hi there, I'm <span class="name desc"></span></h1>
+					</div>
+					<br>
+					<br>
+					<br>
+					<br>
+
 					<ul class="text-center">
 						<li><a href="#">Home</a></li> |
 						<li><a href="#portfolio">Portfolio</a></li> |
@@ -78,7 +85,7 @@
 			<h2 class="fun-facts-header text-center" id="fun-facts">Fun facts</h2>
 
 			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-				<img src="img/rubiks.png" class="img-responsive centered">
+				<img src="img/rubiks.png" class="centered" height="200px" width="200px">
 				<b><p class="text-center">I can solve the Rubik's cube in less than 3 minutes</p></b>
 			</div>
 
@@ -180,8 +187,11 @@
 		<script src="js/main.js"></script>
 
 		<script>
+			function isMobile () {
+				return $(".desc").is(':visible');
+			}
 			$(function() {
-				$(".desc").typed({strings: ["Chiamaka", "a Programmer", "a Self-Empowerment Activist", "an Avid Reader","a Movie Lover","a Tinker","Weird", "Funny","AMAZING"], typeSpeed: 60, showCursor: false, loop: true,startDelay: 900, backDelay: 500
+				$(".desc").typed({strings: ["Chiamaka", "a Programmer", "a Self-Empowerment Activist", "an Avid Reader","a Movie Lover","a Tinker","Weird", "Funny","AMAZING"], typeSpeed: 100, showCursor: false, loop: true,startDelay: 900, backDelay: 500
 				});
 			});
 
