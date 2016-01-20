@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Todo List</title>
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <style type="text/css">
+        .demo-card-wide.mdl-card {
+            width: 320px;
+            height: 500px;
+            position: relative;
+        }
+        .demo-card-wide > .mdl-card__title {
+          color: #E91E63;
+      }
+      .demo-card-wide > .mdl-card__menu {
+          color: #000;
+      }
+      .mdl-textfield.mdl-js-textfield{
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+    }
+    .mdl-data-table{
+        width: 100%;
+    }
+    .full{
+        width: 300px;
+    }
+    .strike{
+        text-decoration: line-through;
+        color: #E91E63;
+        font-size: 20px;
+        text-align: center;
+    }
+    tbody{
+        max-height: 400px;
+        overflow: auto;
+        overflow-y: scroll;
+    }
+</style>
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">To do List App</h1>
+        <!-- Begin of first tile -->
+        <div class="col-lg-4">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title">
+                    <h3 class="mdl-card__title-text">Yet-to-Start</h3>
+                </div>
+                <div class="mdl-card__menu">
+                  <i class="material-icons">today</i>
+              </div>
+              <div>
+                <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="yet-to-start">
+                  <thead>
+                    <tr>
+                      <th class="mdl-data-table__cell--non-numeric">Todo item</th>
+                      <td></td>
+                      <td></td>
+                  </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+          </table>    
+      </div> 
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <label class="mdl-textfield__label" for="sample1">Enter todo item</label>
+        <input class="mdl-textfield__input" type="text" id="enter-todo" autofocus>
+    </div>
+</div>
+</div>   
+<!-- end of first tile -->
+
+<!-- start of second tile -->
+<div class="col-lg-4">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp" id="completed">
+        <div class="mdl-card__title">
+            <h3 class="mdl-card__title-text">Completed</h3>
+        </div>
+        <div class="mdl-card__menu">
+          <i class="material-icons">done all</i>
+      </div>
+      <div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Completed todo items</th>
+          </tr>
+      </thead>
+      <tbody id="complete">
+
+      </tbody>
+  </table>    
+</div> 
+</div>
+</div>
+<!-- end of second tile -->
+
+<!-- start of third tile -->
+<div class="col-lg-4">
+    <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title">
+            <h3 class="mdl-card__title-text">In-Progress</h3>
+        </div>
+        <div class="mdl-card__menu">
+          <i class="material-icons">schedule</i>
+      </div>
+      <div>
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp" id="in-progress">
+            <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric">Todo items in progress</th>
+                  <th></th>
+                  <th></th>
+              </tr>
+            </thead>
+          <tbody id="tbody">
+
+          </tbody>
+        </table>    
+</div> 
+
+</div>
+<!-- end of third tile -->
+</div><!-- end of container -->
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        var counter = 0;
+
+    //when the enter key is pressed
+    $("#enter-todo").keypress(function(e){
+        if(e.which == 13){
+            var entry = $("#enter-todo").val();
+            var row = $('<div>', {class: 'row full'});
+            var tr = $("<tr>");
+            var td = $("<td>", {class: 'mdl-data-table__cell--non-numeric', id: 'text-'+(++counter)});
+            var span = $('<span>',{class:'mdl-checkbox__label pull-left', text:entry});
+            var button = $('<button>', {class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored pull-right', value: counter, html: "Start"});
+            
+            $("#yet-to-start").append(tr);
+            tr.append(td);
+            td.append(row);
+            row.append(span);
+            row.append(button);
+            
+            $("#enter-todo").val(""); 
+        }
+    });
+    
+    //when start button is clicked
+    $(this).on("click", ".mdl-button", function(){
+        var val = $(this).val();
+        var todo_item = ($('#text-' + val).find("span").text());
+        $(this).prop('disabled', true);
+        
+        var tr = $("<tr>");
+        var td = $("<td>", {class: 'mdl-data-table__cell--non-numeric'});
+        var row = $('<div>', {class: 'row full'});
+        var checkbox = $('<input>', {type:"checkbox", class:'mdl-checkbox__input check', value:(val)});
+        var span = $('<span>',{class:'mdl-checkbox__label pull-right', text:todo_item});
+        $("#tbody").append(tr);
+        tr.append(td);
+        td.append(row);
+        row.append(checkbox);
+        row.append(span);
+    });
+    
+    //when the checkbox is clicked
+    $(this).on("click", ".check", function(){
+     if($(".check").prop('checked')){
+        $(this).hide();
+        $(this).next().addClass("strike");
+        var val = $(this).val();
+        var todo_list = ($('#text-' + val).find("span").text());
+
+        var tr = $("<tr>");
+        var td = $("<td>", {class: 'mdl-data-table__cell--non-numeric'});
+        var row = $('<div>', {class: 'row full'});
+        var span = $('<span>',{class:'mdl-checkbox__label pull-right', text:todo_list});
+        var tick = $('<i>', {class: 'material-icons', text:"done"});
+        $("#complete").append(tr);
+        tr.append(td);
+        td.append(row);
+        row.append(tick);
+        row.append(span);
+    }
+});
+});       
+</script>
+
+</body>
+
+</html>
