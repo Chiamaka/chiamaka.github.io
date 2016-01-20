@@ -179,7 +179,7 @@
     
     //when the checkbox is clicked
     $(this).on("click", ".check", function(){
-     if($(".check").prop('checked')){
+     if($(this).prop('checked')){
         $(this).hide();
         $(this).next().addClass("strike");
         var val = $(this).val();
